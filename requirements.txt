@@ -1,0 +1,7 @@
+alembic
+jupyterlab
+numpy
+pandas
+psycopg2
+requests
+SQLAlchemy
