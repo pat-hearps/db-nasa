@@ -3,5 +3,6 @@ jupyterlab
 numpy
 pandas
 psycopg2
+python-dotenv
 requests
 SQLAlchemy
