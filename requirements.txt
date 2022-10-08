@@ -3,6 +3,7 @@ jupyterlab
 numpy
 pandas
 psycopg2-binary
+python-dateutil
 python-dotenv
 requests
 SQLAlchemy
