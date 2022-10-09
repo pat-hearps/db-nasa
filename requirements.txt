@@ -1,9 +1,7 @@
 alembic
-jupyterlab
 numpy
 pandas
 psycopg2-binary
-python-dotenv
 requests
 SQLAlchemy
 sqlalchemy-utils
