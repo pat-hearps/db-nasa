@@ -4,6 +4,7 @@ pandas
 pillow
 scikit-image
 psycopg2-binary
+python-dateutil
 requests
 SQLAlchemy
 sqlalchemy-utils
