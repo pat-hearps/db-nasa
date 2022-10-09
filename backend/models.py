@@ -5,8 +5,8 @@ from sqlalchemy import Column, DateTime, Float, String, BigInteger, Integer
 Base = declarative_base()
 
 
-class EpicImage(Base):
-    __tablename__ = "epic_images"
+class EpicMeta(Base):
+    __tablename__ = "epic_metadata"
     id = Column(Integer, primary_key=True)
     identifier = Column(BigInteger)
     taken_datetime = Column(DateTime)
