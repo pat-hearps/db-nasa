@@ -1,30 +1,36 @@
-
-from datetime import datetime
+from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from pprint import pprint
 import os
-import requests
+
+from common.utils import get_request
 
 
 load_dotenv()
 
-API_KEY = os.getenv('NASA_API_KEY')
-HTTPS = "https://"
-HOST_EPIC = "epic.gsfc.nasa.gov"
-API = "api"
-ARCHIVE = "archive"
-NATURAL = "natural"
-ENHANCED = "enhanced"
-PNG = "png"
-URL_API_KEY = f"&API_KEY={API_KEY}"
+PARSER = "html.parser"
 
-# address = f"{HTTPS}{HOST_EPIC}/{ARCHIVE}/{ENHANCED}/2022/09/22/image/caption{URL_API_KEY}"
-address = f"{HTTPS}{HOST_EPIC}/{API}/{ENHANCED}/{URL_API_KEY}"
+API_KEY = os.getenv('GUARDIAN_API_KEY')
+HTTPS = "https://"
+HOST = "content.guardianapis.com"
+SEARCH = "search?"
+URL_API_KEY = f"api-key={API_KEY}"
+
+query="sunak"
+QUERY=f"q={query}"
+URL = "https://content.guardianapis.com/politics/2022/oct/27/rishi-sunak-rehires-five-ministers-entitled-to-redundancy-payouts"
+# address = f"{HTTPS}{HOST}/{SEARCH}{QUERY}&{URL_API_KEY}"
+fields = f"show-fields=body,trailText,shouldHideAdverts=true"
+address = URL+"?"+fields+"&"+URL_API_KEY
 print(address)
-response = requests.get(address)
-print(response.status_code)
+response = get_request(address)
+
 if response:
-    pprint(response.json())
+    print(response.url)
+    rj = response.json()
+    pprint(rj)
+    body = BeautifulSoup(rj['response']['content']['fields']['body'], features=PARSER)
+    print(body.get_text())
     # for thing in response.json():
     #     print(thing['date'])
 
