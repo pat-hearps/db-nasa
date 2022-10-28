@@ -1,8 +1,6 @@
 alembic
 numpy
 pandas
-pillow
-scikit-image
 psycopg2-binary
 python-dateutil
 requests
