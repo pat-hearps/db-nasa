@@ -1,0 +1,12 @@
+Package          Version
+---------------- -------
+alembic          1.8.1
+jupyterlab       3.5.0
+pandas           1.5.1
+pip              22.3
+psycopg2-binary  2.9.5
+pyspark          3.5.5
+python-dotenv    0.21.0
+setuptools       63.2.0
+SQLAlchemy-Utils 0.38.3
+wheel            0.37.1
